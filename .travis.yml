@@ -1,0 +1,42 @@
+language: node_js
+node_js:
+- 0.10
+notifications:
+  email: false
+services:
+- mongodb
+env:
+  global:
+  - NODE_ENV: test
+addons:
+  sauce_connect: true
+before_install:
+- npm install -g bower
+- npm install -g grunt-cli
+- npm install -g karma-cli
+- npm install -g protractor
+- webdriver-manager update
+- bower install
+before_script:
+- node test/data.js
+- grunt minifica
+script:
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- node server &
+- protractor config/protractor.js
+before_deploy:
+- git config --global user.email 'travis@travis-ci.com'
+- git config --global user.name 'Travis CI'
+- git checkout $TRAVIS_BRANCH
+- git add --all
+- git commit -am "Travis commit"
+deploy:
+  provider: openshift
+  user: flavioyuzhou@yahoo.com.br
+  password:
+    secure: I/MpuR7hdjREwcDFTrquJeCv4YXK75xXCwTB+j94UPEAHz7+ck9XCIUJ2g8BwOtWad9jq7qpbAoGp73xcOkk4cNFpQTj3Mf/921Euf+NnIuPSN/LpOWO6KAtdnofyVJ2XcmjJ0B6o4/o0+ZNiltnhHBIUjo28JflaqynKFx4Ozw=
+  app: contatooh
+  domain: flavioalmeida
+  skip_cleanup: true
+  on:
+    repo: flaviohenriquealmeida/contatooh
