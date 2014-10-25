@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 0.10
+- 0.1
 notifications:
   email: false
 services:
@@ -34,7 +34,7 @@ deploy:
   provider: openshift
   user: flavioyuzhou@yahoo.com.br
   password:
-    secure: I/MpuR7hdjREwcDFTrquJeCv4YXK75xXCwTB+j94UPEAHz7+ck9XCIUJ2g8BwOtWad9jq7qpbAoGp73xcOkk4cNFpQTj3Mf/921Euf+NnIuPSN/LpOWO6KAtdnofyVJ2XcmjJ0B6o4/o0+ZNiltnhHBIUjo28JflaqynKFx4Ozw=
+    secure: B5RJtlmXjkJ58Cap3mCLtDFtg2LXNAS6ntfK3ZF9EIUZBcZ4pEESmTQ2qdq6tE4N4TifI/4nqL3eWwdy8xa1xBPO2HgnbGfkfCgIzkdujJ20VlnAXqmg8T4kz4cvhCgfAugB+ARH1OYXS1gPIxElqx3nul0kzY30XNGnYK6Ewf0=
   app: contatooh
   domain: flavioalmeida
   skip_cleanup: true
