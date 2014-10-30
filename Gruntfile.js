@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-  
+   
     usemin : {
       html: 'app/views/**/*.ejs'
     },
