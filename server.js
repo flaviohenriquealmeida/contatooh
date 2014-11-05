@@ -3,7 +3,6 @@ var config = require('./config/config')();
 var http = require('http');
 var express = require('express');
 var app = express(); 
-console.log(config);
 require('./config/express')(app);
 require('./config/passport')();
 require('./config/database')(config.db); 
