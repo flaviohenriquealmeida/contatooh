@@ -13,7 +13,9 @@ exports.config = {
   specs: ['../test/e2e/**/*Spec.js'],
   onPrepare: function() {
     browser.ignoreSynchronization = true;
+    browser.manage().timeouts().pageLoadTimeout(40000);
     browser.get('http://localhost:3000');
+    browser.sleep(10000);
     element(by.id('entrar')).click(); 
     element(by.id('login_field')).sendKeys(config.seleniumUser);
     element(by.id('password')).sendKeys(config.seleniumUserPassword);

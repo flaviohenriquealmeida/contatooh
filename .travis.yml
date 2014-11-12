@@ -23,7 +23,6 @@ before_script:
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
 - node server &
-- sleep 10
 - protractor config/protractor.js
 before_deploy:
 - git config --global user.email 'travis@travis-ci.com'
