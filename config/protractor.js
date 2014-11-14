@@ -16,8 +16,10 @@ exports.config = {
     //browser.manage().timeouts().pageLoadTimeout(40000);
     //browser.manage().timeouts().implicitlyWait(25000);
     browser.get('http://localhost:3000');
+    browser.sleep(10000);
     //browser.driver.findElement(by.id('entrar')).click();
     element(by.id('entrar')).click(); 
+    browser.sleep(10000);
     //browser.driver.findElement(by.id('login_field')).sendKeys(config.seleniumUser);
     element(by.id('login_field')).sendKeys(config.seleniumUser);
     //browser.driver.findElement(by.id('password')).sendKeys(config.seleniumUserPassword);
