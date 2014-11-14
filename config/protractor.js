@@ -3,9 +3,10 @@ var config = require('./config')();
 exports.config = { 
   sauceUser : config.sauceUser, 
   sauceKey : config.sauceKey, 
+  directConnect : false,
   capabilities : {
     'name': config.sauceTestName,
-    'browserName': 'firefox',
+    'browserName': 'chrome',
     'tunnel-identifier': config.travisJobNumber,
     'build': config.travisBuild
   },
