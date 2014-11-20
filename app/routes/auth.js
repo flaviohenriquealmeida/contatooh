@@ -16,9 +16,11 @@ module.exports = function(app) {
 	  res.redirect('/');
 	});
 
-	app.get('/auth/github', passport.authenticate('github'));
-	app.get('/auth/github/callback', function() {
-		console.log("### chamou callback");
-		return passport.authenticate('github', { successRedirect: '/' })
+	app.get('/auth/github', function() {
+		console.log("####### joga para github");
+		return passport.authenticate('github');
 	});
+	app.get('/auth/github/callback', passport.authenticate('github', {
+		successRedirect: '/'
+	}));
 }
