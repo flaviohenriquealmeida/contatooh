@@ -20,8 +20,6 @@ before_install:
 before_script:
 - node test/data.js
 - grunt minifica
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
 - node server &
