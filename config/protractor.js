@@ -1,6 +1,7 @@
 // com protractor você remove o seleniumAdress
 var config = require('./config')();
 exports.config = { 
+  seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
   sauceUser : config.sauceUser, 
   sauceKey : config.sauceKey, 
   capabilities : {
