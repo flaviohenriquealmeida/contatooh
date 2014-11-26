@@ -20,9 +20,10 @@ before_install:
 before_script:
 - node test/data.js
 - grunt minifica
+- node server &
+- sleep 15
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
-- node server &
 - protractor config/protractor.js
 before_deploy:
 - git config --global user.email 'travis@travis-ci.com'
