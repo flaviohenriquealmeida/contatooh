@@ -21,7 +21,7 @@ before_script:
 - node test/data.js
 - grunt minifica
 - node server &
-- sleep 15
+- sleep 10
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
 - protractor config/protractor.js
