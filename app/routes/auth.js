@@ -2,6 +2,7 @@ var passport = require('passport');
 
 module.exports = function(app) {
 	
+	/*
 	app.get('/', function(req, res, next) {
 		if(req.isAuthenticated()) {
 			return next();
@@ -20,4 +21,5 @@ module.exports = function(app) {
 	app.get('/auth/github/callback', passport.authenticate('github', {
 		successRedirect: '/'
 	}));
+*/
 }

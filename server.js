@@ -4,7 +4,7 @@ var http = require('http');
 var express = require('express');
 var app = express(); 
 require('./config/express')(app);
-require('./config/passport')();
+//require('./config/passport')();
 require('./config/database')(config.db); 
 
 http.createServer(app).listen(config.port, config.address, function(){

@@ -12,6 +12,7 @@ exports.config = {
 
   specs: ['../test/e2e/**/*Spec.js'],
   onPrepare: function() {
+    /*
     browser.ignoreSynchronization = true;
     browser.get('http://localhost:3000');
     element(by.id('entrar')).click(); 
@@ -19,5 +20,6 @@ exports.config = {
     element(by.id('password')).sendKeys(config.seleniumUserPassword);
     element(by.name('commit')).click();
     browser.ignoreSynchronization = false;
+    */
   }
 };
