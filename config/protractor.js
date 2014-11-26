@@ -1,4 +1,5 @@
 // com protractor você remove o seleniumAdress
+//  "version": "27"
 var config = require('./config')();
 exports.config = { 
   sauceUser : config.sauceUser, 
@@ -6,7 +7,6 @@ exports.config = {
   capabilities : {
     'name': config.sauceTestName,
     'browserName': 'chrome',
-    "version": "27",
     'tunnel-identifier': config.travisJobNumber,
     'build': config.travisBuild
   },
