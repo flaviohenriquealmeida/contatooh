@@ -13,26 +13,28 @@
 </p>
 <p ng-show="contatos.length">Contatos cadastrados: {{contatos.length}}</p>
 
-<div class="table-responsive">
-  <table class="table table-hover">
-    <tr>
-      <th>NOME</th>
-      <th>E-MAIL</th>
-      <th>Emergência</th>
-      <th class="text-center">Ação</th>
+<meu-painel titulo="Listagem de Contatos">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <tr>
+        <th>NOME</th>
+        <th>E-MAIL</th>
+        <th>Emergência</th>
+        <th class="text-center">Ação</th>
+      </tr>
+      <tr ng-repeat="contato in contatos | filter: filtro ">
+      <td>
+        <a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a>
+      </td>
+      <td>{{contato.email}}</td>
+      <td>{{contato.emergencia.nome}}</td>
+      <td class="text-center">
+       <meu-botao-aviso 
+          nome="Remover" 
+          acao="remove(contato)">
+       </meu-botao-aviso>
+      </td>
     </tr>
-    <tr ng-repeat="contato in contatos | filter: filtro ">
-    <td>
-      <a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a>
-    </td>
-    <td>{{contato.email}}</td>
-    <td>{{contato.emergencia.nome}}</td>
-    <td class="text-center">
-      <button ng-click="remove(contato)" 
-        class="btn btn-warning">
-        Remover
-      </buttom> 
-    </td>
-  </tr>
-  </table>
-</div>
+    </table>
+  </div>
+</meu-painel>

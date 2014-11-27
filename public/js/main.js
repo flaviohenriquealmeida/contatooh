@@ -1,4 +1,4 @@
-angular.module('contatooh', ['ngRoute', 'ngResource'])
+angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes'])
   .config(function($routeProvider) {
 
     $routeProvider.when('/contatos', {

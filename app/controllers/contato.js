@@ -91,7 +91,6 @@ module.exports = function (app) {
 
 	controller.salvaContato = function(req, res) {
 	  var _id = req.body._id;
-
 	  var dados = { 
 	  	"nome" : req.body.nome, 
 	  	"email" : req.body.email, 
@@ -99,10 +98,11 @@ module.exports = function (app) {
 	  };
 
 	  if(_id) {
-	 	 Contato.findByIdAndUpdate(_id, dados).exec()
+	 	 Contato.findByIdAndUpdate(_id, {$set: dados}).exec()
 	 	 .then(
 	 	 	function(contato) {
 	 	 		// 200 é o padrão
+	 	 		console.log('atualizou sem problema');
 	 	 		res.json(contato);
 	 	 	}, 
 	 	 	function(erro) {
