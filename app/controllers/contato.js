@@ -94,15 +94,13 @@ module.exports = function (app) {
 	  var dados = { 
 	  	"nome" : req.body.nome, 
 	  	"email" : req.body.email, 
-	  	"emergencia" : req.body.emergencia
+	  	"emergencia" : req.body.emergencia || null
 	  };
 
 	  if(_id) {
-	 	 Contato.findByIdAndUpdate(_id, {$set: dados}).exec()
+	 	 Contato.findByIdAndUpdate(_id, dados).exec()
 	 	 .then(
 	 	 	function(contato) {
-	 	 		// 200 é o padrão
-	 	 		console.log('atualizou sem problema');
 	 	 		res.json(contato);
 	 	 	}, 
 	 	 	function(erro) {
@@ -112,6 +110,7 @@ module.exports = function (app) {
 	 	 );
 
 	  } else {
+	  	
 	  	Contato.create(dados)
 	  	.then(
 	  		function(contato) {
