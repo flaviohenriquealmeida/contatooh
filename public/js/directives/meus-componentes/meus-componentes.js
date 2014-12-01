@@ -27,9 +27,9 @@ angular.module('meusComponentes', [])
     };
 
     directive.template = 
-      '<button ng-click="acao()" class="btn btn-warning">'
-    	+ '{{nome}}'
-    + '</buttom>';
+      '<button ng-click="acao()" class="btn btn-warning">' + 
+    	'  {{nome}}' + 
+      '</buttom>';
     
     return directive;
 })
@@ -48,6 +48,7 @@ angular.module('meusComponentes', [])
         if (scope.focus) {
           console.log(element);
           element[0].focus();
+          scope.focus = false;
         } 
       });
     };
