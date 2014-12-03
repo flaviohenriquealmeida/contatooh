@@ -23,21 +23,13 @@ module.exports = function(config) {
     '../public/js/controllers/**/*.js',
     '../public/js/services/**/*.js',
     '../public/js/directives/**/*.js',
-    '../test/spec/**/*Spec.js'
+    '../test/spec/**/*Spec.js',
+    '../public/js/directives/**/*.html'
     ],
-
-
 
     // list of files to exclude
     exclude: [
     ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -70,5 +62,6 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
+
   });
 };

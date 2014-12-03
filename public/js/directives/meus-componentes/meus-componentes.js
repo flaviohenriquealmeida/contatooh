@@ -44,9 +44,7 @@ angular.module('meusComponentes', [])
 
     directive.link = function(scope, element) {
       scope.$watch('focus', function() {
-        console.log('chamou watch');
         if (scope.focus) {
-          console.log(element);
           element[0].focus();
           scope.focus = false;
         } 
