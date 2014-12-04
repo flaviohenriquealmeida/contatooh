@@ -22,10 +22,11 @@ describe('meusComponentes', function() {
 	});
 
 	it('Deve focar o botão', function() {
-		$scope.btnFocus = true;
-		var element = angular.element('<button meu-focus focus="btnFocus">Voltar</button>');
+		var evento = 'contatoSalvo';
+		var element = angular.element('<button meu-focus evento="' + evento + '">Voltar</button>');
 		var compiled = $compile(element)($scope);
 		angular.element(document.body).append(element);
+		$scope.$broadcast(evento);
 		$scope.$digest();
 		expect(angular.element(document.activeElement).text()).toBe('Voltar');
 	});

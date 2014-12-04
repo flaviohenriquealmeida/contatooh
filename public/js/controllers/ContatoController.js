@@ -1,4 +1,4 @@
-angular.module('contatooh').controller('ContatoController', function($scope, $routeParams, Contato) {
+angular.module('contatooh').controller('ContatoController', function($scope, $routeParams, Contato, $rootScope) {
 	
 	Contato.query(function(contatos) {
 		console.log("Chamou lista de contatos");
@@ -28,7 +28,7 @@ angular.module('contatooh').controller('ContatoController', function($scope, $ro
 		.then(function() {
 			$scope.mensagem = {texto: 'Salvo com sucesso'};
 			$scope.contato = new Contato();
-			$scope.btnBackFocus = true;
+			$scope.$broadcast('contatoSalvo');
 		})
 		.catch(function(erro) {
   			$scope.mensagem = {texto: 'Não foi possível salvar'};
