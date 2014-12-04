@@ -12,7 +12,6 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
-
     // list of files / patterns to load in the browser
     files: [
     '../public/vendor/angular/angular.js',
@@ -24,7 +23,7 @@ module.exports = function(config) {
     '../public/js/services/**/*.js',
     '../public/js/directives/**/*.js',
     '../test/spec/**/*Spec.js',
-    '../public/js/directives/**/*.html'
+    '../public/js/directives/meus-componentes/*.html'
     ],
 
     // list of files to exclude
@@ -37,6 +36,21 @@ module.exports = function(config) {
     reporters: ['progress'],
 
 
+    preprocessors : {
+        '../public/js/directives/**/*.html': 'ng-html2js'
+    },
+
+    plugins : [
+        'karma-chrome-launcher',
+        'karma-ng-html2js-preprocessor',
+        'karma-phantomjs-launcher',
+        'karma-jasmine'
+    ],
+
+    ngHtml2JsPreprocessor: {
+        moduleName: 'templates',
+        stripPrefix: '.*/public/'
+    },
     // web server port
     port: 9876,
 
@@ -47,7 +61,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes

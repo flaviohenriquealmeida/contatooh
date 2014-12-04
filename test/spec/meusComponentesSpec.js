@@ -5,6 +5,7 @@ describe('meusComponentes', function() {
 
 	beforeEach(function() {
 		module('meusComponentes');
+		module('templates');
 	});
 
 	beforeEach(inject(function(_$compile_, $rootScope) {
@@ -31,14 +32,15 @@ describe('meusComponentes', function() {
 		expect(angular.element(document.activeElement).text()).toBe('Voltar');
 	});
 
-/*
+
+
 	it('Deve criar um painel', function() {
 		var element = angular.element('<meu-painel titulo="Principal"><p>Olá</p></meu-painel>');
 		var compiled = $compile(element)($scope);
 		console.log(compiled);
 		$scope.$digest();
 	});
-*/
+
 
 	// terceiro é o problemático do template cache
 });
