@@ -22,6 +22,8 @@ angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes'])
     $rootScope.$on("$routeChangeStart",function(event, next, current){
         //Do your things
         if(next.templateUrl) {
+            ga('send', 'pageview', { page: next.templateUrl });
+            ga('send', 'pageview');
           __insp.push([next.templateUrl]);
         }
     });
