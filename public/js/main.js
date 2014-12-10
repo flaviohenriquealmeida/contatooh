@@ -23,7 +23,6 @@ angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes'])
         //Do your things
         if(next.templateUrl) {
             ga('send', 'pageview', { page: next.templateUrl });
-            ga('send', 'pageview');
           __insp.push([next.templateUrl]);
         }
     });
