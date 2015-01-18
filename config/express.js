@@ -1,16 +1,14 @@
-var load = require('express-load');
-var path = require('path');
-var bodyParser = require('body-parser'); 
-
 var express = require('express');
+var load = require('express-load');
+var bodyParser = require('body-parser'); 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 // https://github.com/evilpacket/helmet
 var helmet  = require('helmet')
 
-module.exports = function(app) {
-
+module.exports = function() {
+	var app = express();
 	/*
 	express-session deprecated undefined resave option; provide resave option config/express.js:15:10
 	express-session deprecated undefined saveUninitialized option; provide saveUninitialized option config/express.js:15:10
