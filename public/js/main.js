@@ -23,6 +23,7 @@ angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes'])
     });
 
     $routeProvider.otherwise({redirectTo: '/contatos'});
+    
 }).run(function ($rootScope, $location) { //Insert in the function definition the dependencies you need.
     //Do your $on in here, like this:
     $rootScope.$on("$routeChangeStart",function(event, next, current){
