@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '..',
 
 
     // frameworks to use
@@ -14,16 +14,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-    '../public/vendor/angular/angular.js',
-    '../public/vendor/angular-mocks/angular-mocks.js',
-    '../public/vendor/angular-resource/angular-resource.js',
-    '../public/vendor/angular-route/angular-route.js',
-    '../public/js/main.js',
-    '../public/js/controllers/**/*.js',
-    '../public/js/services/**/*.js',
-    '../public/js/directives/**/*.js',
-    '../test/spec/**/*Spec.js',
-    '../public/js/directives/meus-componentes/*.html'
+    'public/vendor/angular/angular.js',
+    'public/vendor/angular-mocks/angular-mocks.js',
+    'public/vendor/angular-resource/angular-resource.js',
+    'public/vendor/angular-route/angular-route.js',
+    'public/js/main.js',
+    'public/js/controllers/**/*.js',
+    'public/js/services/**/*.js',
+    'public/js/directives/**/*.js',
+    'test/spec/**/*Spec.js',
+    'public/js/directives/meus-componentes/*.html'
     ],
 
     // list of files to exclude
@@ -37,7 +37,7 @@ module.exports = function(config) {
 
 
     preprocessors : {
-        '../public/js/directives/**/*.html': 'ng-html2js'
+        'public/js/directives/**/*.html': 'ng-html2js'
     },
 
     plugins : [
@@ -49,7 +49,7 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
         moduleName: 'templates',
-        stripPrefix: '.*/public/'
+        stripPrefix: '.*public/'
     },
     // web server port
     port: 9876,
