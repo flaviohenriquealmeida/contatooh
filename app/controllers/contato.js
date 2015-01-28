@@ -42,8 +42,7 @@ module.exports = function (app) {
 		Contato.remove({"_id" : _id}).exec()
 		.then(
 			function() {
-				// express deprecated res.send(status): Use res.status(status).end() instead
-				res.end();	
+				 res.status(204).end();	
 			}, 
 			function(err) {
 				return console.error(erro);
