@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 
 module.exports = function(uri) {
 	
-	//mongoose.set('debug',true);
 	mongoose.connect(uri, { server: { poolSize: 15 }});
 	mongoose.connection.on('connected', function () {
 	  console.log('Mongoose! Connectado em ' + uri);
